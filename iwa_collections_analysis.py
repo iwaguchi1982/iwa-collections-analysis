@@ -94,7 +94,7 @@ def _clear_session_keys(keys: list[str]) -> None:
 # =========================
 DATA_ROOT = Path.home() / "iwa-collections-analysis" / "data"
 
-st.set_page_config(page_title="cBioPortal Target Explorer", layout="wide")
+st.set_page_config(page_title="Iwa Collections Analysis", layout="wide")
 pending = st.session_state.pop("pending_analysis_settings", None)
 if isinstance(pending, dict):
     # safe: happens before widgets instantiation in this run
@@ -294,7 +294,7 @@ def build_run_params_table(params: dict) -> pd.DataFrame:
         rows.append({"Parameter": str(k), "Value": str(v)})
     return pd.DataFrame(rows)
 
-st.sidebar.title("🧬いろいろしらべるくん🧬\nv0.1.0\nCopyright (c) 2026 J. Iwaguchi")
+st.sidebar.title("🧬Iwa Collections Analysis🧬\nv0.1.0\nCopyright (c) 2026 J. Iwaguchi")
 st.sidebar.markdown("## 📈Analysis Settings")
 
 # -----------------------------

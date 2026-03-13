@@ -1,4 +1,4 @@
-# cBioPortal Target Explorer: 🚀 GPUアクセラレーション導入に関する見積もりと展望
+# Iwa Collections Analysis: 🚀 GPUアクセラレーション導入に関する見積もりと展望
 
 現在の `iwa-collections-analysis` アプリケーション（CPUベース実装）をプロファイリング・スキャンし、**GPU処理（CUDA / CuPy / PyTorch / RAPIDS cuML等）** を導入した場合に期待できるパフォーマンス向上（Speedup）と、その実装アプローチについて検討しました。
 
