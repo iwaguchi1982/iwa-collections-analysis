@@ -1,0 +1,54 @@
+Iwa Collections Non-Resale License 1.0
+
+Software License / ソフトウェアライセンス
+
+Copyright (c) 2026 J. Iwaguchi
+
+日本語 / Japanese
+本ソフトウェアおよび関連文書ファイル（以下「本ソフトウェア」）について、
+著作権表示および本ライセンス表示を保持することを条件として、
+使用、複製、改変、再配布を無償で許可します。
+
+ただし、以下の行為を禁止します。
+
+1. 本ソフトウェア自体を、有償で販売すること。
+2. 本ソフトウェアに改変を加えた派生物を、主たる価値として有償で販売すること。
+3. 本ソフトウェアまたはその派生物について、著作権表示または本ライセンス表示を削除して再配布すること。
+
+なお、以下の利用は許可されます。
+
+- 企業、大学、研究機関等における内部利用
+- 研究、教育、検証、評価目的での利用
+- 本ソフトウェアを用いた解析結果や成果物の作成および利用
+- 無償での改変・再配布
+
+本ソフトウェアは「現状のまま」で提供され、明示または黙示を問わず、
+いかなる保証もありません。作者または著作権者は、本ソフトウェアの使用
+または使用不能に起因または関連して生じたいかなる請求、損害、その他の
+責任についても、一切責任を負いません。
+
+English
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and redistribute the Software, subject to the following conditions:
+
+1. The above copyright notice and this license notice shall be included in all
+   copies or substantial portions of the Software.
+2. Selling the Software itself is prohibited.
+3. Selling modified versions or derivative works of the Software, where the
+   Software constitutes the primary value of the product, is prohibited.
+
+The following uses are permitted:
+
+- Internal use within companies, universities, and research institutions
+- Use for research, education, evaluation, and testing purposes
+- Creation and use of outputs or results produced using the Software
+- Free-of-charge modification and redistribution
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

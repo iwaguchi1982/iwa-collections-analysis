@@ -1,0 +1,5 @@
+[compute]
+use_gpu = false
+
+[database]
+use_db = false

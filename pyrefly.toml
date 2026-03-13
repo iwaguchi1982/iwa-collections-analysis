@@ -1,0 +1,4 @@
+infer-with-first-use = false
+
+[[sub-config]]
+matches = "."
