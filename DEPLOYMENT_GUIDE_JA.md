@@ -1,13 +1,16 @@
-# cBioPortal Target Explorer: サービス概要およびデプロイガイド
+# Iwa Collections Analysis: サービス概要およびデプロイガイド
 
-本ドキュメントは、本アプリケーション（cBioPortal Target Explorer）をホスティングおよび運用・提供する事業者（企業・システム管理部門など）向けに、アプリケーションが解決する課題（ビジネスバリュー）と、具体的な動作環境およびデプロイ手順をまとめたものです。
+本ドキュメントは、本アプリケーション（Iwa Collections Analysis）をホスティングおよび運用・提供する事業者（企業・システム管理部門など）向けに、アプリケーションが解決する課題（ビジネスバリュー）と、具体的な動作環境およびデプロイ手順をまとめたものです。
+
+> 本プロジェクトは探索研究向けの開発中ソフトウェアです。
+> 臨床判断、規制対応用途、診断用途を意図したものではありません。
 
 ---
 
 ## 1. アプリケーションの概要 (Executive Summary)
 
 ### アプリケーション名
-**cBioPortal Target Explorer (Advanced Edition)**
+**Iwa Collections Analysis**
 
 ### 開発の背景と目的
 がんに特化した世界最大級のオープンデータベースである「cBioPortal」等の公開データを活用し、次世代のがん治療薬の標的（ターゲット）となる遺伝子の探索、および既存薬の転用（ドラッグリパーパシング）を支援するための、インタラクティブなデータサイエンス・プラットフォームです。
@@ -24,7 +27,7 @@
    - `Cross-Cohort Validation` & `Meta-Analysis`: 別のデータセット（外部コホート）を用いて結果を検証し、過学習を防ぎます。
    - `Companion Diagnostics`: この薬はどの集団（Stage IIIなど）に最も効果的か？という「患者層別化」の提案を自動出力します。
 4. **創薬適性・安全性（Druggability & Safety）の統合**:
-   - 探索した標的遺伝子が、細胞のどこにあるのか（細胞表面か核内か）、全身毒性リスク（CRISPR必須性）はないか、既存の承認薬や治験薬はないかという「創薬実現性」のデータをOpenTargetsから（またはセキュアなMockデータから）取得して統合表示します。
+   - 探索した標的遺伝子が、細胞のどこにあるのか（細胞表面か核内か）、全身毒性リスク（CRISPR必須性）はないか、既存の承認薬や治験薬はないかという「創薬実現性」のデータをOpenTargetsから（またはセキュアなMockデータから）取得して統合表示する機能を備えています。
 5. **堅牢なガードレール（フェイルセーフUI）**:
    - イベント（死亡等）の数が少なすぎるデータセットや、欠損値が多いデータをユーザーが誤って解析しようとした場合、アプリ側が検知して**自動で計算をブロック・警告**し、誤った統計解釈による開発の無駄を防ぎます（Event DANGER, Missing CAUTION）。
 
@@ -62,17 +65,21 @@
    ```bash
    curl -fsSL https://pixi.sh/install.sh | bash
    ```
-2. **依存関係の解決と仮想環境のアクティベート**
+2. **依存関係のインストール**
    ```bash
    cd /path/to/iwa-collections-analysis
-   pixi shell
+   pixi install
    ```
-3. **アプリケーションの起動**
+3. **Pixi 環境内でアプリケーションを起動**
    ```bash
-   streamlit run iwa-collections-analysis.py --server.port 8501 --server.address 0.0.0.0
+   python -m streamlit run iwa_collections_analysis.py --server.port 8501 --server.address 0.0.0.0
+   ```
+   **または、Pixi シェルに入らずに直接起動する場合**
+   ```bash
+   pixi run python -m streamlit run iwa_collections_analysis.py --server.port 8501 --server.address 0.0.0.0
    ```
 
-### B. Docker を用いた本番 / クラウド環境へのデプロイ
+### B. Docker を用いた本番 / クラウド環境へのデプロイ（参考例）
 コンテナベース（Docker）でのホスティングが最も管理が容易です。以下のような標準的な `Dockerfile` で動作します。
 
 ```dockerfile
@@ -100,7 +107,7 @@ EXPOSE 8501
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
 # アプリの起動
-CMD ["streamlit", "run", "iwa-collections-analysis.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.enableCORS", "false"]
+CMD ["python", "-m", "streamlit", "run", "iwa_collections_analysis.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.enableCORS", "false"]
 ```
 
 ### ネットワーク・セキュリティ設定の要件
@@ -115,7 +122,7 @@ CMD ["streamlit", "run", "iwa-collections-analysis.py", "--server.port", "8501",
 
 ---
 
-## 4. 提供会社・システム管理者様のサポート窓口におけるFAQ
+## 4. 管理者向けFAQ
 
 **Q. 「Data scope limited」または「メモリ確保エラー」が出ると報告があった**
 A. ホストマシンのRAM（メモリ）が不足しています。インスタンスのスケールアップを検討するか、より小さなデータセットをAnalysisへ投入するようにユーザーへ案内してください。

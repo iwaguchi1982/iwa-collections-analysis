@@ -37,11 +37,11 @@ Tested environment:
 Clone this repository:
 
 ```bash
-git clone https://github.com/yourname/iwa-collections-analysis.git
+git clone https://github.com/iwaguchi1982/iwa-collections-analysis.git
 cd iwa-collections-analysis
 
-# Install Pixi if it is not already installed: or Install Pixi by following the official instructions for your environment, then run:
-# Exp:
+# Install Pixi if it is not already installed:
+```bash
 curl -fsSL https://pixi.sh/install.sh | sh
 # Install project dependencies:
 pixi install
@@ -50,11 +50,24 @@ pixi install
 ## Usage
 
 Run the application inside the Pixi environment:
-```
+```bash
 pixi shell
 python -m streamlit run iwa_collections_analysis.py
 ```
 Alternatively, you can launch it directly without entering the shell:
-```
+```bash
 pixi run python -m streamlit run iwa_collections_analysis.py
 ```
+## Documentation
+
+- [Overview](docs/overview.md)
+- [Features](docs/features.md)
+- [FAQ](docs/faq.md)
+- [Deployment Guide (JA)](DEPLOYMENT_GUIDE_JA.md)
+
+## Notes
+> 本プロジェクトは探索研究向けの開発中ソフトウェアです。
+> 臨床判断、規制対応用途、診断用途を意図したものではありません。
+
+## LICENSE
+This project is distributed under the Iwa Collections Non-Resale License 1.0.
