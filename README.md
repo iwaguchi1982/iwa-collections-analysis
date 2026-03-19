@@ -1,6 +1,12 @@
 # iwa-collections-analysis
-
+再利用可能で実用的なワークフローを実現する、探索的バイオインフォマティクス解析プラットフォーム。
 Exploratory bioinformatics analysis platform for reusable and practical workflows.
+現在未実装：ローカルLLM（外部流出無し）で解釈や、確認ポイントを補助する予定。
+Currently not implemented: Local LLM (no external leakage) is planned to assist with interpretation and verification points.
+Used for target gene discovery.
+標的遺伝子の探索に利用。
+cBIoportal dataset: Your own data, etc.
+cBIoportalデータセット:お手持ちのデータ等。
 
 ## Overview
 
